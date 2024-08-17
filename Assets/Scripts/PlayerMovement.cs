@@ -7,12 +7,13 @@ public class PlayerMovement : MonoBehaviour
 {
     public float moveSpeed = 5f;
     public float initialJumpSpeed = 5;
-    // public float jumpAcceleration = 0f;
     public float maxJumpTime = 0.1f;
     public float earlyJumpReleaseVelocityModifier = 0.1f;
+    public float coyoteTime = 0.1f;
 
     private Rigidbody2D rb;
     private BoxCollider2D col;
+    private float lastWasGroundedTime = 0f;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,13 +25,14 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         Vector2 newVelocity = rb.velocity;
-
+        SetGroundedTime();
         // move left/right
         newVelocity.x = Input.GetAxisRaw("Horizontal") * moveSpeed;
 
         // jump
         if (PressedJumpKey() && IsGrounded())
         {
+            Debug.Log("Jump started");
             newVelocity.y = initialJumpSpeed;
             StartCoroutine(Jump());
         }
@@ -46,10 +48,9 @@ public class PlayerMovement : MonoBehaviour
         while (currentJumpTime < maxJumpTime && HoldingJumpKey())
         {
             currentJumpTime += Time.deltaTime;
-            Debug.Log("in jump coroutine");
             yield return null;
         }
-
+        Debug.Log("end jump up, beginning fall");
         if (!HoldingJumpKey() && rb.velocity.y > 0)
         {
             Debug.Log("kill velocity early");
@@ -81,17 +82,27 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKeyUp(KeyCode.W)) return true;
         return false;
     }
-
     bool IsGrounded()
     {
-        Vector2 origin = transform.position;
-        origin.y = origin.y - col.bounds.extents.y - 0.05f;
-        if (Physics2D.OverlapBox(origin,new Vector2(col.bounds.size.x-0.1f,0.05f),0))
+        if (Time.time - lastWasGroundedTime < coyoteTime)
         {
-            // Debug.Log("grounded");
             return true;
         }
-        // Debug.Log("not grounded");
         return false;
+    }
+
+    void SetGroundedTime()
+    {
+        Vector2 origin = transform.position;
+        origin.y = origin.y - col.bounds.extents.y - 0.1f;
+
+        Collider2D otherCollider = Physics2D.OverlapBox(origin, new Vector2(col.bounds.size.x - 0.1f, 0.05f), 0);
+
+        if (otherCollider == null) return;
+
+        if (!otherCollider.CompareTag("Player"))
+        {
+            lastWasGroundedTime = Time.time;
+        }
     }
 }

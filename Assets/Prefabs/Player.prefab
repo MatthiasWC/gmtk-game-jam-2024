@@ -175,3 +175,4 @@ MonoBehaviour:
   initialJumpSpeed: 20
   maxJumpTime: 0.5
   earlyJumpReleaseVelocityModifier: 0.5
+  coyoteTime: 0.1
