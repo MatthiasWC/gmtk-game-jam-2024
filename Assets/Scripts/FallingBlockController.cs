@@ -4,7 +4,10 @@ using UnityEngine;
 
 public class FallingBlockController : MonoBehaviour
 {
+    public float probabilityWeight;
     [SerializeField] private float fallSpeed;
+
+    [System.NonSerialized] public float width;
 
     private Rigidbody2D rb;
 
