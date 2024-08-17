@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class FallingBlockController : MonoBehaviour
 {
-    [SerializeField]
-    private float fallSpeed;
+    [SerializeField] private float fallSpeed;
 
     private Rigidbody2D rb;
 
