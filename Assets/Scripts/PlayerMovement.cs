@@ -30,7 +30,7 @@ public class PlayerMovement : MonoBehaviour
         newVelocity.x = Input.GetAxisRaw("Horizontal") * moveSpeed;
 
         // jump
-        if (PressedJumpKey() && IsGrounded())
+        if (HoldingJumpKey() && IsGrounded() && rb.velocity.y <= 0)
         {
             Debug.Log("Jump started");
             newVelocity.y = initialJumpSpeed;
@@ -50,10 +50,10 @@ public class PlayerMovement : MonoBehaviour
             currentJumpTime += Time.deltaTime;
             yield return null;
         }
-        Debug.Log("end jump up, beginning fall");
+        //Debug.Log("end jump up, beginning fall");
         if (!HoldingJumpKey() && rb.velocity.y > 0)
         {
-            Debug.Log("kill velocity early");
+            //Debug.Log("kill velocity early");
             rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * earlyJumpReleaseVelocityModifier);
             yield break;
         }
