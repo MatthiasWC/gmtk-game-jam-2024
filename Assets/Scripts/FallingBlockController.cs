@@ -8,37 +8,34 @@ public class FallingBlockController : MonoBehaviour
     [SerializeField] private float fallSpeed;
     [SerializeField] private float landedLifespan;
     [SerializeField] private GameObject blockType;
+    public float width;
+    public float height;
 
     private Collider2D collider;
-    [System.NonSerialized] public float width;
-    [System.NonSerialized] public float height;
 
     private Rigidbody2D rb;
 
     private void Start()
     {
         collider = GetComponent<Collider2D>();
-        width = collider.bounds.size.x;
-        width = collider.bounds.size.y;
 
         rb = GetComponent<Rigidbody2D>();
         rb.velocity = new Vector2(0, -fallSpeed);
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D otherCollider)
     {
-        if (collision.collider?.tag == "Player")
+        if (otherCollider.tag == "Player")
         {
-            PlayerBlockController pbc = collision.gameObject.GetComponent<PlayerBlockController>();
-            pbc.PickUpBlock(blockType);
-            Object.Destroy(gameObject);
+            PlayerBlockController pbc = otherCollider.gameObject.GetComponent<PlayerBlockController>();
+            pbc.PickUpBlock(blockType, gameObject);
         }
-        else if (collision.collider?.tag == "Terrain")
+        else if (otherCollider.tag == "Terrain")
         {
             rb.velocity = Vector2.zero;
             StartCoroutine(DestroyAfterDelay(landedLifespan));
         }
-        else if (collision.collider?.tag == "Water")
+        else if (otherCollider.tag == "Water")
         {
             StartCoroutine(DestroyAfterDelay(landedLifespan));
         }
@@ -49,7 +46,7 @@ public class FallingBlockController : MonoBehaviour
         yield return new WaitForSeconds(delay);
         if (gameObject != null)
         {
-            Object.Destroy(gameObject);
+            Destroy(gameObject);
         }
     }
 }

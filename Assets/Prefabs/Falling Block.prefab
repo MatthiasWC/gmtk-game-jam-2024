@@ -100,8 +100,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   probabilityWeight: 0
-  fallSpeed: 1
+  fallSpeed: 2
+  landedLifespan: 0
   blockType: {fileID: 5379693628975305598, guid: 73dd5f07059c0564db9ded52dd5899d4, type: 3}
+  width: 1
+  height: 1
 --- !u!50 &2275638135391519760
 Rigidbody2D:
   serializedVersion: 4

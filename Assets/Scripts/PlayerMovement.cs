@@ -32,7 +32,6 @@ public class PlayerMovement : MonoBehaviour
         // jump
         if (HoldingJumpKey() && IsGrounded() && rb.velocity.y <= 0)
         {
-            Debug.Log("Jump started");
             newVelocity.y = initialJumpSpeed;
             StartCoroutine(Jump());
         }
@@ -42,7 +41,6 @@ public class PlayerMovement : MonoBehaviour
 
     IEnumerator Jump()
     {
-        Debug.Log("Jumping");
         float currentJumpTime = 0f;
 
         while (currentJumpTime < maxJumpTime && HoldingJumpKey())

@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d3500784515efd4a97dd12c48bea88d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  blockFrequency: 3
-  blockIntervalVariation: 2
+  blockFrequency: 1
+  blockIntervalVariation: 1
   blockTypes:
   - {fileID: 377239496438209804, guid: 6ea0cd9257af93343a08594e68159d65, type: 3}
