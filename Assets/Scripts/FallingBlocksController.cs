@@ -44,8 +44,8 @@ public class FallingBlocksController : MonoBehaviour
             }
         }
 
-        float halfBlockWidth = chosenBlockType.GetComponent<Collider2D>().bounds.size.x / 2;
-        float halfBlockHeight = chosenBlockType.GetComponent<Collider2D>().bounds.size.y / 2;
+        float halfBlockWidth = chosenBlockType.width / 2;
+        float halfBlockHeight = chosenBlockType.height / 2;
         float spawnX = Random.Range(spawnRange[0].x + halfBlockWidth, spawnRange[1].x - halfBlockWidth);
         Vector3 spawnPos = new Vector3(spawnX, spawnRange[0].y + halfBlockHeight, 0);
         Object.Instantiate(chosenBlockType, spawnPos, Quaternion.identity);
