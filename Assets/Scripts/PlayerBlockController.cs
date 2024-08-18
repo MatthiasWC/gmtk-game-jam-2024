@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerBlockController : MonoBehaviour
 {
     private GameObject currentBlock;
+    private LineRenderer trajectoryLine;
 
     public void PickUpBlock(GameObject block, GameObject fallingBlock)
     {
