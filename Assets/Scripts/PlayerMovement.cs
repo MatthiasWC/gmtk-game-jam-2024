@@ -98,7 +98,8 @@ public class PlayerMovement : MonoBehaviour
 
         if (otherCollider == null) return;
 
-        if (!otherCollider.CompareTag("Player"))
+        // Layer 8 is thrown blocks
+        if (!otherCollider.CompareTag("Player") && otherCollider.gameObject.layer != 8)
         {
             lastWasGroundedTime = Time.time;
         }
