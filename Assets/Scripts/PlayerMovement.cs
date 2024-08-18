@@ -30,7 +30,7 @@ public class PlayerMovement : MonoBehaviour
         newVelocity.x = Input.GetAxisRaw("Horizontal") * moveSpeed;
 
         // jump
-        if (HoldingJumpKey() && IsGrounded() && rb.velocity.y <= 0)
+        if (HoldingJumpKey() && IsGrounded() && rb.velocity.y <= 0.001f)
         {
             newVelocity.y = initialJumpSpeed;
             StartCoroutine(Jump());
@@ -48,10 +48,8 @@ public class PlayerMovement : MonoBehaviour
             currentJumpTime += Time.deltaTime;
             yield return null;
         }
-        //Debug.Log("end jump up, beginning fall");
         if (!HoldingJumpKey() && rb.velocity.y > 0)
         {
-            //Debug.Log("kill velocity early");
             rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * earlyJumpReleaseVelocityModifier);
             yield break;
         }
@@ -80,7 +78,7 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKeyUp(KeyCode.W)) return true;
         return false;
     }
-    bool IsGrounded()
+    public bool IsGrounded()
     {
         if (Time.time - lastWasGroundedTime < coyoteTime)
         {

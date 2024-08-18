@@ -38,14 +38,16 @@ public class BlockController : MonoBehaviour
         }
     }
 
-    public void Throw()
+    public Vector2 Throw()
     {
         hasBeenThrown = true;
-        transform.parent = null;
+        /*transform.parent = null;*/
+        Destroy(gameObject.GetComponent<FixedJoint2D>());
         lr.enabled = false;
-        rb.simulated = true;
-        /*rb.bodyType = RigidbodyType2D.Dynamic;*/
+        /*rb.simulated = true;*/
+        rb.bodyType = RigidbodyType2D.Dynamic;
         rb.velocity = throwVelocity;
+        return throwVelocity;
     }
 
     private Vector2[] PlotThrowTrajectory(Vector2 velocity)
@@ -76,7 +78,6 @@ public class BlockController : MonoBehaviour
         if (hasBeenThrown && collision.collider.gameObject.layer == 7)
         {
             rb.velocity = Vector2.zero;
-            //rb.simulated = false;
             rb.constraints = RigidbodyConstraints2D.FreezeAll;
             rb.bodyType = RigidbodyType2D.Static;
             // layer 7 is terrain
