@@ -34,7 +34,7 @@ public class PlayerBlockController : MonoBehaviour
             float playerOffset = GetComponent<Collider2D>().bounds.extents.y;
             float blockOffset = block.GetComponent<BlockController>().size.y / 2;
             Vector3 offset = new Vector3(0, playerOffset + blockOffset, 0);
-            currentBlock = Instantiate(block, transform.position + offset, Quaternion.identity);//, transform);
+            currentBlock = Instantiate(block, transform.position + offset, Quaternion.identity);
             currentBlock.AddComponent<FixedJoint2D>();
             currentBlock.GetComponent<FixedJoint2D>().connectedBody = rb;
             Destroy(fallingBlock);

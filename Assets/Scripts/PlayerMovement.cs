@@ -10,6 +10,7 @@ public class PlayerMovement : MonoBehaviour
     public float maxJumpTime = 0.1f;
     public float earlyJumpReleaseVelocityModifier = 0.1f;
     public float coyoteTime = 0.1f;
+    public float maxFallSpeed = 10f;
 
     private Rigidbody2D rb;
     private BoxCollider2D col;
@@ -37,6 +38,14 @@ public class PlayerMovement : MonoBehaviour
         }
 
         rb.velocity = newVelocity;
+    }
+
+    private void FixedUpdate()
+    {
+        if (rb.velocity.y < -maxFallSpeed)
+        {
+            rb.velocity = new Vector2(rb.velocity.x, -maxFallSpeed);
+        }
     }
 
     IEnumerator Jump()
@@ -92,7 +101,7 @@ public class PlayerMovement : MonoBehaviour
         Vector2 origin = transform.position;
         origin.y = origin.y - col.bounds.extents.y - 0.1f;
 
-        Collider2D otherCollider = Physics2D.OverlapBox(origin, new Vector2(col.bounds.size.x - 0.1f, 0.05f), 0);
+        Collider2D otherCollider = Physics2D.OverlapBox(origin, new Vector2(col.bounds.size.x - 0.03f, 0.05f), 0);
 
         if (otherCollider == null) return;
 

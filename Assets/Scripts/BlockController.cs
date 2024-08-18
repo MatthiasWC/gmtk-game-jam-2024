@@ -72,9 +72,6 @@ public class BlockController : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        Debug.Log("collision enter");
-        Debug.Log("other tag: " + collision.collider.tag);
-        Debug.Log("other layer: " + collision.collider.gameObject.layer);
         if (hasBeenThrown && collision.collider.gameObject.layer == 7)
         {
             rb.velocity = Vector2.zero;
