@@ -18,7 +18,7 @@ public class FallingBlocksController : MonoBehaviour
         StartCoroutine(SpawnBlock());
 
         GameBounds gameBounds = GameBounds.instance;
-        spawnRange = new[] { gameBounds.upperLeft, gameBounds.upperRight + new Vector2(0, 5) };
+        spawnRange = new[] { gameBounds.upperLeft, gameBounds.upperRight };
 
         foreach (FallingBlockController blockType in blockTypes)
         {
@@ -44,10 +44,10 @@ public class FallingBlocksController : MonoBehaviour
             }
         }
 
-        float halfBlockWidth = chosenBlockType.GetComponent<Collider2D>().bounds.size.x / 2;
-        float halfBlockHeight = chosenBlockType.GetComponent<Collider2D>().bounds.size.y / 2;
+        float halfBlockWidth = chosenBlockType.width / 2;
+        float halfBlockHeight = chosenBlockType.height / 2;
         float spawnX = Random.Range(spawnRange[0].x + halfBlockWidth, spawnRange[1].x - halfBlockWidth);
-        Vector3 spawnPos = new Vector3(spawnX, spawnRange[0].y + halfBlockHeight, 0);
+        Vector3 spawnPos = new Vector3(spawnX, spawnRange[0].y + halfBlockHeight + 0.1f, 0);
         Object.Instantiate(chosenBlockType, spawnPos, Quaternion.identity);
 
         StartCoroutine(SpawnBlock());

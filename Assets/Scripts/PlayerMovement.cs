@@ -10,6 +10,7 @@ public class PlayerMovement : MonoBehaviour
     public float maxJumpTime = 0.1f;
     public float earlyJumpReleaseVelocityModifier = 0.1f;
     public float coyoteTime = 0.1f;
+    public float maxFallSpeed = 10f;
 
     private Rigidbody2D rb;
     private BoxCollider2D col;
@@ -30,9 +31,8 @@ public class PlayerMovement : MonoBehaviour
         newVelocity.x = Input.GetAxisRaw("Horizontal") * moveSpeed;
 
         // jump
-        if (HoldingJumpKey() && IsGrounded() && rb.velocity.y <= 0)
+        if (HoldingJumpKey() && IsGrounded() && rb.velocity.y <= 0.001f)
         {
-            Debug.Log("Jump started");
             newVelocity.y = initialJumpSpeed;
             StartCoroutine(Jump());
         }
@@ -40,9 +40,16 @@ public class PlayerMovement : MonoBehaviour
         rb.velocity = newVelocity;
     }
 
+    private void FixedUpdate()
+    {
+        if (rb.velocity.y < -maxFallSpeed)
+        {
+            rb.velocity = new Vector2(rb.velocity.x, -maxFallSpeed);
+        }
+    }
+
     IEnumerator Jump()
     {
-        Debug.Log("Jumping");
         float currentJumpTime = 0f;
 
         while (currentJumpTime < maxJumpTime && HoldingJumpKey())
@@ -50,10 +57,8 @@ public class PlayerMovement : MonoBehaviour
             currentJumpTime += Time.deltaTime;
             yield return null;
         }
-        //Debug.Log("end jump up, beginning fall");
         if (!HoldingJumpKey() && rb.velocity.y > 0)
         {
-            //Debug.Log("kill velocity early");
             rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * earlyJumpReleaseVelocityModifier);
             yield break;
         }
@@ -82,7 +87,7 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKeyUp(KeyCode.W)) return true;
         return false;
     }
-    bool IsGrounded()
+    public bool IsGrounded()
     {
         if (Time.time - lastWasGroundedTime < coyoteTime)
         {
@@ -96,11 +101,12 @@ public class PlayerMovement : MonoBehaviour
         Vector2 origin = transform.position;
         origin.y = origin.y - col.bounds.extents.y - 0.1f;
 
-        Collider2D otherCollider = Physics2D.OverlapBox(origin, new Vector2(col.bounds.size.x - 0.1f, 0.05f), 0);
+        Collider2D otherCollider = Physics2D.OverlapBox(origin, new Vector2(col.bounds.size.x - 0.03f, 0.05f), 0);
 
         if (otherCollider == null) return;
 
-        if (!otherCollider.CompareTag("Player"))
+        // Layer 8 is thrown blocks
+        if (!otherCollider.CompareTag("Player") && otherCollider.gameObject.layer != 8)
         {
             lastWasGroundedTime = Time.time;
         }
