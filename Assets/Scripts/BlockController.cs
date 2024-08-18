@@ -44,6 +44,7 @@ public class BlockController : MonoBehaviour
         transform.parent = null;
         lr.enabled = false;
         rb.simulated = true;
+        /*rb.bodyType = RigidbodyType2D.Dynamic;*/
         rb.velocity = throwVelocity;
     }
 
@@ -65,5 +66,21 @@ public class BlockController : MonoBehaviour
         }
 
         return results;
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        Debug.Log("collision enter");
+        Debug.Log("other tag: " + collision.collider.tag);
+        Debug.Log("other layer: " + collision.collider.gameObject.layer);
+        if (hasBeenThrown && collision.collider.gameObject.layer == 7)
+        {
+            rb.velocity = Vector2.zero;
+            //rb.simulated = false;
+            rb.constraints = RigidbodyConstraints2D.FreezeAll;
+            rb.bodyType = RigidbodyType2D.Static;
+            // layer 7 is terrain
+            gameObject.layer = 7;
+        }
     }
 }

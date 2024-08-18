@@ -6,7 +6,13 @@ public class PlayerBlockController : MonoBehaviour
 {
     private GameObject currentBlock;
     private LineRenderer trajectoryLine;
-    
+    /*private Rigidbody2D rb;
+
+    private void Start()
+    {
+        rb = GetComponent<Rigidbody2D>();
+    }*/
+
     void Update()
     {
         if (Input.GetMouseButtonUp(0) && currentBlock != null)
@@ -25,6 +31,8 @@ public class PlayerBlockController : MonoBehaviour
             float blockOffset = block.GetComponent<BlockController>().size.y / 2;
             Vector3 offset = new Vector3(0, playerOffset + blockOffset, 0);
             currentBlock = Instantiate(block, transform.position + offset, Quaternion.identity, transform);
+            /*currentBlock.AddComponent<FixedJoint2D>();
+            currentBlock.GetComponent<FixedJoint2D>().connectedBody = rb;*/
             Destroy(fallingBlock);
         }
     }
