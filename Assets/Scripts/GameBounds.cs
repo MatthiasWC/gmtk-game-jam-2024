@@ -26,7 +26,7 @@ public class GameBounds : MonoBehaviour
 
         lowerLeft = points[0];
         lowerRight = points[1];
-        upperLeft = points[2];
-        upperRight = points[3];
+        upperRight = points[2];
+        upperLeft = points[3];
     }
 }
