@@ -6,6 +6,16 @@ public class PlayerBlockController : MonoBehaviour
 {
     private GameObject currentBlock;
     private LineRenderer trajectoryLine;
+    
+    void Update()
+    {
+        if (Input.GetMouseButtonUp(0) && currentBlock != null)
+        {
+            BlockController bc = currentBlock.GetComponent<BlockController>();
+            bc.Throw();
+            currentBlock = null;
+        }
+    }
 
     public void PickUpBlock(GameObject block, GameObject fallingBlock)
     {

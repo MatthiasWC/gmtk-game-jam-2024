@@ -10,6 +10,7 @@ public class BlockController : MonoBehaviour
 
     private bool hasBeenThrown;
     private Vector2 mousePos;
+    private Vector2 throwVelocity;
     private Rigidbody2D rb;
     private LineRenderer lr;
 
@@ -24,7 +25,7 @@ public class BlockController : MonoBehaviour
         if (!hasBeenThrown)
         {
             mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            Vector2 throwVelocity = (mousePos - rb.position) * throwPower;
+            throwVelocity = (mousePos - new Vector2(transform.position.x, transform.position.y)) * throwPower;
 
             Vector2[] throwTrajectory = PlotThrowTrajectory(throwVelocity);
             lr.positionCount = throwTrajectory.Length;
@@ -34,15 +35,16 @@ public class BlockController : MonoBehaviour
                 positions[i] = throwTrajectory[i];
             }
             lr.SetPositions(positions);
-
-            if (Input.GetMouseButtonUp(0))
-            {
-                hasBeenThrown = true;
-                transform.parent = null;
-                rb.simulated = true;
-                rb.velocity = throwVelocity;
-            }
         }
+    }
+
+    public void Throw()
+    {
+        hasBeenThrown = true;
+        transform.parent = null;
+        lr.enabled = false;
+        rb.simulated = true;
+        rb.velocity = throwVelocity;
     }
 
     private Vector2[] PlotThrowTrajectory(Vector2 velocity)
