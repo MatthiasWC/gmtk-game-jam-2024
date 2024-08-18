@@ -13,11 +13,11 @@ TagManager:
   - 
   - Water
   - UI
-  - background
-  - 
-  - 
-  - 
-  - 
+  - Background
+  - Terrain
+  - Thrown Block
+  - Player
+  - Game Bounds
   - 
   - 
   - 
