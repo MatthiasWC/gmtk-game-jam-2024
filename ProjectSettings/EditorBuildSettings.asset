@@ -8,4 +8,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MainManu.unity
     guid: 1fe1a99f08e92e94ebfc115964e7a6e1
+  - enabled: 1
+    path: Assets/Scenes/Heidi Test Scene.unity
+    guid: 2c2eb3b63b370a94ca438929bf611f31
   m_configObjects: {}
