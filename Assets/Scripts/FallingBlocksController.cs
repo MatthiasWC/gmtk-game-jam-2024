@@ -9,16 +9,12 @@ public class FallingBlocksController : MonoBehaviour
     [SerializeField] private float blockIntervalVariation;
     [SerializeField] private FallingBlockController[] blockTypes;
 
-    private Vector2[] spawnRange;
     private float probabilityRange;
     /*private List<GameObject> liveBlocks;*/
 
     void Start()
     {
         StartCoroutine(SpawnBlock());
-
-        GameBounds gameBounds = GameBounds.instance;
-        spawnRange = new[] { gameBounds.upperLeft, gameBounds.upperRight };
 
         foreach (FallingBlockController blockType in blockTypes)
         {
@@ -43,6 +39,8 @@ public class FallingBlocksController : MonoBehaviour
                 break;
             }
         }
+
+        Vector2[] spawnRange = new[] { GameBounds.instance.upperLeft, GameBounds.instance.upperRight };
 
         float halfBlockWidth = chosenBlockType.width / 2;
         float halfBlockHeight = chosenBlockType.height / 2;
