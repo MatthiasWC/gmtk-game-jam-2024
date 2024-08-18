@@ -40,15 +40,15 @@ TagManager:
   - 
   - 
   m_SortingLayers:
-  - name: margins
-    uniqueID: 2406035849
-    locked: 0
-  - name: waves
-    uniqueID: 3755105863
+  - name: background
+    uniqueID: 4157593719
     locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: background
-    uniqueID: 4157593719
+  - name: waves
+    uniqueID: 3755105863
+    locked: 0
+  - name: margins
+    uniqueID: 2406035849
     locked: 0

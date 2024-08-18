@@ -170,13 +170,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3318769656660973131, guid: e77ddb013183d9943ac3e71c483840d9, type: 3}
+      propertyPath: m_SortingLayer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 6713861353462667877, guid: e77ddb013183d9943ac3e71c483840d9, type: 3}
       propertyPath: m_Name
       value: Game Bounds
-      objectReference: {fileID: 0}
-    - target: {fileID: 7784961559011444094, guid: e77ddb013183d9943ac3e71c483840d9, type: 3}
-      propertyPath: m_Enabled
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -606,11 +606,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 765695719622445737, guid: 06cf0bf993268334597db7bc159d3d5b, type: 3}
       propertyPath: m_SortingLayer
-      value: -1
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 842304712315816684, guid: 06cf0bf993268334597db7bc159d3d5b, type: 3}
       propertyPath: m_SortingLayer
-      value: -1
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1538235152638075579, guid: 06cf0bf993268334597db7bc159d3d5b, type: 3}
       propertyPath: m_Name
