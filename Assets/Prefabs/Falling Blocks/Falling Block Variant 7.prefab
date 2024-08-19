@@ -12,6 +12,10 @@ PrefabInstance:
       propertyPath: blockType
       value: 
       objectReference: {fileID: 2819054669002840456, guid: ff1095980b441f146b8c866409d5ebf9, type: 3}
+    - target: {fileID: 377239496438209804, guid: 6ea0cd9257af93343a08594e68159d65, type: 3}
+      propertyPath: probabilityWeight
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4553932399779188641, guid: 6ea0cd9257af93343a08594e68159d65, type: 3}
       propertyPath: m_Name
       value: Falling Block Variant 7
