@@ -23,23 +23,28 @@ public class PlayerBlockController : MonoBehaviour
             Vector2 throwVelocity = bc.Throw();
             currentBlock = null;
             rb.velocity += throwVelocity.normalized * -recoilForce;
+            StartCoroutine(WaitThenPickUp());
+        }
+    }
 
-            if (col.IsTouchingLayers(LayerMask.GetMask("Falling Block")))
+    private IEnumerator WaitThenPickUp()
+    {
+        yield return new WaitForSeconds(0.5f);
+        if (currentBlock == null && col.IsTouchingLayers(LayerMask.GetMask("Falling Block")))
+        {
+            ContactFilter2D filter = new()
             {
-                ContactFilter2D filter = new()
-                {
-                    useLayerMask = true,
-                    layerMask = LayerMask.GetMask("Falling Block"),
-                    useTriggers = true
-                };
-                Collider2D[] touchingColliders = new Collider2D[1];
-                int numColliding = col.OverlapCollider(filter, touchingColliders);
-                if (numColliding > 0)
-                {
-                    GameObject fallingBlock = touchingColliders[0].gameObject;
-                    FallingBlockController fallingBlockController = fallingBlock.GetComponent<FallingBlockController>();
-                    PickUpBlock(fallingBlockController.blockType, fallingBlock, fallingBlockController.rotation);
-                }
+                useLayerMask = true,
+                layerMask = LayerMask.GetMask("Falling Block"),
+                useTriggers = true
+            };
+            Collider2D[] touchingColliders = new Collider2D[1];
+            int numColliding = col.OverlapCollider(filter, touchingColliders);
+            if (numColliding > 0)
+            {
+                GameObject fallingBlock = touchingColliders[0].gameObject;
+                FallingBlockController fallingBlockController = fallingBlock.GetComponent<FallingBlockController>();
+                PickUpBlock(fallingBlockController.blockType, fallingBlock, fallingBlockController.rotation);
             }
         }
     }

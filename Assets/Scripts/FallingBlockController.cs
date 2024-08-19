@@ -42,7 +42,7 @@ public class FallingBlockController : MonoBehaviour
             PlayerBlockController pbc = otherCollider.gameObject.GetComponent<PlayerBlockController>();
             pbc.PickUpBlock(blockType, gameObject, rotation);
         }
-        else if (otherCollider.tag == "Terrain")
+        else if (otherCollider.gameObject.layer == LayerMask.NameToLayer("Terrain"))
         {
             rb.velocity = Vector2.zero;
             StartCoroutine(DestroyAfterDelay(landedLifespan));
