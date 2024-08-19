@@ -14,9 +14,10 @@ GameObject:
   - component: {fileID: 6252514100163552183}
   - component: {fileID: 2374393315585188646}
   - component: {fileID: 5153722486967154433}
+  - component: {fileID: -4817710811249363065}
   m_Layer: 8
   m_Name: Block
-  m_TagString: Untagged
+  m_TagString: Block
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -124,7 +125,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 5379693628975305598}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 86dffff583b971c4c8efd18f7c100b10, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -279,3 +280,15 @@ LineRenderer:
   m_UseWorldSpace: 1
   m_Loop: 0
   m_ApplyActiveColorSpace: 1
+--- !u!114 &-4817710811249363065
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5379693628975305598}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 360cff5fbb5a50e49a92bd8d30728f8d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

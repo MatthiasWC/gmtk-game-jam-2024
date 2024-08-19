@@ -7,11 +7,14 @@ public class FallingBlockController : MonoBehaviour
     public float probabilityWeight;
     [SerializeField] private float fallSpeed;
     [SerializeField] private float landedLifespan;
-    [SerializeField] private GameObject blockType;
+    public GameObject blockType;
     public float width;
     public float height;
 
+    // warning CS0108
+#pragma warning disable
     private Collider2D collider;
+#pragma warning restore
 
     private Rigidbody2D rb;
 

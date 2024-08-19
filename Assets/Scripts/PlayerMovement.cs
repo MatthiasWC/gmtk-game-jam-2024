@@ -105,8 +105,8 @@ public class PlayerMovement : MonoBehaviour
 
         if (otherCollider == null) return;
 
-        // Layer 8 is thrown blocks
-        if (!otherCollider.CompareTag("Player") && otherCollider.gameObject.layer != 8)
+        // Using a layermask in the overlapbox would be better here
+        if (!otherCollider.CompareTag("Player") && !otherCollider.CompareTag("FallingBlock") && otherCollider.gameObject.layer != LayerMask.NameToLayer("Thrown Block"))
         {
             lastWasGroundedTime = Time.time;
         }
