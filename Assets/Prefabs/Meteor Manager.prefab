@@ -45,5 +45,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   meteor: {fileID: 37159216031744503, guid: 2b0cb57904b082f47ac5cea8418340eb, type: 3}
-  meteorFrequency: 1
-  meteorIntervalVariation: 1
+  meteorFrequency: 3
+  meteorIntervalVariation: 3

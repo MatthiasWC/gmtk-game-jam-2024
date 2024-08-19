@@ -47,4 +47,11 @@ MonoBehaviour:
   blockFrequency: 1
   blockIntervalVariation: 1
   blockTypes:
-  - {fileID: 377239496438209804, guid: 6ea0cd9257af93343a08594e68159d65, type: 3}
+  - {fileID: 8869849194332778169, guid: cc68098485cd0fd4d8a8622d2acb25ab, type: 3}
+  - {fileID: 766689045458311504, guid: 721f67f1271a7df4bbe8a3486a89d3bf, type: 3}
+  - {fileID: 6254306838247708748, guid: f5fd89582175cb747b1550b5ba0305ea, type: 3}
+  - {fileID: 963467760375099356, guid: 49a90666e250a7e4d979ec3d13e8991f, type: 3}
+  - {fileID: 4832948276795066477, guid: 986d7b25009d82643b651bbe3b468bca, type: 3}
+  - {fileID: 3768566033007273069, guid: f64056286a2689c4aaa2b1c49ecd5134, type: 3}
+  - {fileID: 6811445528963943734, guid: f72c76c496b4c8941bb4da68b10d761f, type: 3}
+  - {fileID: 4855922861959636914, guid: 2bcac81580b4b9c4fabe126537437f5c, type: 3}
