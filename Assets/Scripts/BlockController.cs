@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class BlockController : MonoBehaviour
 {
-    public Vector2 size;
     [SerializeField] private float throwPower = 5f;
     [SerializeField] private int trajectoryLineSteps = 500;
 

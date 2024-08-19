@@ -37,22 +37,23 @@ public class PlayerBlockController : MonoBehaviour
                 if (numColliding > 0)
                 {
                     GameObject fallingBlock = touchingColliders[0].gameObject;
-                    PickUpBlock(fallingBlock.GetComponent<FallingBlockController>().blockType, fallingBlock);
+                    FallingBlockController fallingBlockController = fallingBlock.GetComponent<FallingBlockController>();
+                    PickUpBlock(fallingBlockController.blockType, fallingBlock, fallingBlockController.rotation);
                 }
             }
         }
     }
 
-    public void PickUpBlock(GameObject block, GameObject fallingBlock)
+    public void PickUpBlock(GameObject block, GameObject fallingBlock, float rotation)
     {
         if (currentBlock == null)
         {
             float playerOffset = GetComponent<Collider2D>().bounds.extents.y;
-            float blockOffset = block.GetComponent<BlockController>().size.y / 2;
-            Vector3 offset = new Vector3(0, playerOffset + blockOffset, 0);
-            currentBlock = Instantiate(block, transform.position + offset, Quaternion.identity);
+            Vector3 offset = new Vector3(0, playerOffset, 0);
+            currentBlock = Instantiate(block, transform.position + offset, Quaternion.Euler(0, 0, rotation));
+            float blockOffset = currentBlock.GetComponent<Collider2D>().bounds.extents.y;
+            currentBlock.transform.position += new Vector3(0, blockOffset, 0);
             currentBlock.AddComponent<FixedJoint2D>().connectedBody = rb;
-            /*currentBlock.GetComponent<FixedJoint2D>().connectedBody = rb;*/
             Destroy(fallingBlock);
         }
     }
