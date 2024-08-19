@@ -23,8 +23,6 @@ public class FollowPlayer : MonoBehaviour
         float targetY = System.Math.Min(System.Math.Max(playerTransform.position.y, startPos.y), endPos.y);
         Vector3 targetPosition = new Vector3(startPos.x, targetY, offset);
         float adjustedFollowForce = 1 / (followForce * (targetPosition - transform.position).magnitude);
-        Debug.Log("distance: " + (targetPosition - transform.position).magnitude);
-        Debug.Log("adjustedFollowForce: " + adjustedFollowForce);
         transform.position = Vector3.SmoothDamp(transform.position, targetPosition, ref velocity, adjustedFollowForce);
     }
 }

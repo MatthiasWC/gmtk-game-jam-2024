@@ -1,0 +1,53 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class MeteorManager : MonoBehaviour
+{
+    [SerializeField] private GameObject meteor;
+    [SerializeField] private float meteorFrequency;
+    [SerializeField] private float meteorIntervalVariation;
+
+    private float ySpawnRange;
+    private float xSpawnRange;
+    private float meteorRadius;
+    private GameBounds gameBounds;
+
+    void Start()
+    {
+        StartCoroutine(SpawnMeteor());
+
+        meteorRadius = meteor.GetComponent<CircleCollider2D>().radius + 1;
+
+        gameBounds = GameBounds.instance;
+
+        ySpawnRange = gameBounds.upperLeft.y - gameBounds.lowerLeft.y - 4;
+        xSpawnRange = gameBounds.upperRight.x - gameBounds.upperLeft.x;
+    }
+
+    IEnumerator SpawnMeteor()
+    {
+        float waitTime = meteorFrequency + Random.Range(-meteorIntervalVariation, meteorIntervalVariation);
+        yield return new WaitForSeconds(waitTime);
+
+        float spawnDist = Random.Range(0, ySpawnRange * 2 + xSpawnRange);
+
+        Vector2 spawnPos = Vector2.zero;
+        if (spawnDist <= ySpawnRange)
+        {
+            spawnPos = new Vector2(gameBounds.upperLeft.x - meteorRadius, gameBounds.upperLeft.y - spawnDist);
+        }
+        else if (spawnDist <= ySpawnRange + xSpawnRange)
+        {
+            spawnPos = new Vector2(gameBounds.upperLeft.x + spawnDist - ySpawnRange, gameBounds.upperLeft.y + meteorRadius);
+        }
+        else
+        {
+            spawnPos = new Vector2(gameBounds.upperRight.x + meteorRadius, gameBounds.upperRight.y - (spawnDist - ySpawnRange - xSpawnRange));
+        }
+
+        Object.Instantiate(meteor, spawnPos, Quaternion.identity);
+
+        StartCoroutine(SpawnMeteor());
+    }
+}

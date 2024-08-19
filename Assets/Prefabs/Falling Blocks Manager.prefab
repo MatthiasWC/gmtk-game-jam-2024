@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5889162539665369839}
   - component: {fileID: 2551802060729808897}
   m_Layer: 0
-  m_Name: Falling Blocks Controller
+  m_Name: Falling Blocks Manager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
