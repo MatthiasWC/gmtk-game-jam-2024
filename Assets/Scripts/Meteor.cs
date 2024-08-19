@@ -34,4 +34,14 @@ public class Meteor : MonoBehaviour
         rb.velocity = startVelocity;
         rb.angularVelocity = Random.Range(0, 0.5f);
     }
+
+    private void OnTriggerEnter2D(Collider2D otherCollider)
+    {
+        Destructible ds = otherCollider.gameObject.GetComponent<Destructible>();
+        if (ds != null)
+        {
+            ds.Destruct();
+            GetComponent<Destructible>().Destruct();
+        }
+    }
 }

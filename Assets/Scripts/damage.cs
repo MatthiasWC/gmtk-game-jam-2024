@@ -21,7 +21,6 @@ public class damage : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            Debug.Log("Damaged player");
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
     }

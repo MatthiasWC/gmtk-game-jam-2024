@@ -35,8 +35,8 @@ public class PlayerBlockController : MonoBehaviour
             float blockOffset = block.GetComponent<BlockController>().size.y / 2;
             Vector3 offset = new Vector3(0, playerOffset + blockOffset, 0);
             currentBlock = Instantiate(block, transform.position + offset, Quaternion.identity);
-            currentBlock.AddComponent<FixedJoint2D>();
-            currentBlock.GetComponent<FixedJoint2D>().connectedBody = rb;
+            currentBlock.AddComponent<FixedJoint2D>().connectedBody = rb;
+            /*currentBlock.GetComponent<FixedJoint2D>().connectedBody = rb;*/
             Destroy(fallingBlock);
         }
     }
