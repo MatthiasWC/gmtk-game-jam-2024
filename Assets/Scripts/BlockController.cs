@@ -44,10 +44,14 @@ public class BlockController : MonoBehaviour
     public Vector2 Throw()
     {
         hasBeenThrown = true;
-        /*transform.parent = null;*/
         Destroy(gameObject.GetComponent<FixedJoint2D>());
         lr.enabled = false;
-        /*rb.simulated = true;*/
+        if (GetComponent<Collider2D>().IsTouchingLayers(LayerMask.GetMask("Terrain")))
+        {
+            DisablePhysics();
+            gameObject.layer = LayerMask.NameToLayer("Terrain");
+            return Vector2.zero;
+        }
         EnablePhysics();
         rb.velocity = throwVelocity;
         return throwVelocity;

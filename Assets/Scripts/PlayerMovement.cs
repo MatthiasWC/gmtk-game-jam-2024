@@ -106,7 +106,7 @@ public class PlayerMovement : MonoBehaviour
         if (otherCollider == null) return;
 
         // Using a layermask in the overlapbox would be better here
-        if (!otherCollider.CompareTag("Player") && otherCollider.gameObject.layer != LayerMask.NameToLayer("Thrown Block"))
+        if (!otherCollider.CompareTag("Player") && !otherCollider.CompareTag("FallingBlock") && otherCollider.gameObject.layer != LayerMask.NameToLayer("Thrown Block"))
         {
             lastWasGroundedTime = Time.time;
         }
