@@ -8,6 +8,7 @@ public class MeteorManager : MonoBehaviour
     [SerializeField] private float meteorFrequency;
     [SerializeField] private float meteorIntervalVariation;
     [SerializeField] private float meteorElevationMultiplier = 0.1f;
+    [SerializeField] private float lowestMeteorHeight = 6;
 
     private float ySpawnRange;
     private float xSpawnRange;
@@ -23,7 +24,7 @@ public class MeteorManager : MonoBehaviour
 
         player = PlayerSingleton.instance.gameObject.transform;
 
-        ySpawnRange = gameBounds.upperLeft.y - gameBounds.lowerLeft.y - 4;
+        ySpawnRange = gameBounds.upperLeft.y - gameBounds.lowerLeft.y - lowestMeteorHeight;
         xSpawnRange = gameBounds.upperRight.x - gameBounds.upperLeft.x;
 
         StartCoroutine(SpawnMeteor());

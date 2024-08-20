@@ -121,7 +121,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3e48130b1fa8834cb3ff0dd6bfdf6c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  risingSpeed: 1
+  risingSpeed: 0.1
   risingDelay: 5
 --- !u!114 &4105189247931416692
 MonoBehaviour:

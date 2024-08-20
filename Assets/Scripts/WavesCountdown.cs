@@ -8,7 +8,7 @@ public class WavesCountdown : MonoBehaviour
     [System.NonSerialized] public static WavesCountdown instance;
 
     public float prepTime = 20f;
-    private int countdownSeconds = 5;
+    [SerializeField] private int countdownSeconds = 5;
     [SerializeField] private TextMeshProUGUI countdownTextBox;
 
     void Start()
