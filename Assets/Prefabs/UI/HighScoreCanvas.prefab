@@ -302,7 +302,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: highest of score
+  m_text: ye height
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: afe849a5a17c7524f907a99826834f70, type: 2}
   m_sharedMaterial: {fileID: -8247406344957482004, guid: afe849a5a17c7524f907a99826834f70, type: 2}
