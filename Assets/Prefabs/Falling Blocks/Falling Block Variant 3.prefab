@@ -14,7 +14,7 @@ PrefabInstance:
       objectReference: {fileID: 2326245072478282037, guid: 2b1e067037d1e254d990b11bf2bac8dc, type: 3}
     - target: {fileID: 377239496438209804, guid: 6ea0cd9257af93343a08594e68159d65, type: 3}
       propertyPath: probabilityWeight
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4553932399779188641, guid: 6ea0cd9257af93343a08594e68159d65, type: 3}
       propertyPath: m_Name

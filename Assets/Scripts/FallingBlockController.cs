@@ -10,6 +10,7 @@ public class FallingBlockController : MonoBehaviour
     public GameObject blockType;
     public float width;
     public float height;
+    [SerializeField] private float[] dirWeights = new float[] { 1, 1, 1, 1 };
 
     // warning CS0108
 #pragma warning disable
@@ -18,7 +19,7 @@ public class FallingBlockController : MonoBehaviour
 
     private Rigidbody2D rb;
     [System.NonSerialized] public float rotation;
-    private static float[] directions = new float[] { 0f, 90f, -90f, 180f };
+    private static float[] directions = new float[] { 0f, 90f, 180f, 270f };
 
     private void Start()
     {
@@ -27,7 +28,24 @@ public class FallingBlockController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         rb.velocity = new Vector2(0, -fallSpeed);
 
-        rotation = directions[Random.Range(0, 4)];
+        float totalValue = 0;
+        for (int i = 0; i < dirWeights.Length; i++)
+        {
+            totalValue += dirWeights[i];
+        }
+        float runningIndex = 0;
+        float targetIndex = Random.Range(0, totalValue);
+        float chosenDir = 0;
+        for (int i = 0; i < directions.Length; i++)
+        {
+            runningIndex += dirWeights[i];
+            if (targetIndex <= runningIndex)
+            {
+                chosenDir = directions[i];
+                break;
+            }
+        }
+        rotation = chosenDir;
         Transform child = transform.GetChild(0);
         SpriteRenderer childSR = child.gameObject.GetComponent<SpriteRenderer>();
         childSR.sprite = blockType.GetComponent<SpriteRenderer>().sprite;

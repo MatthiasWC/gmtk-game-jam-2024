@@ -16,6 +16,14 @@ PrefabInstance:
       propertyPath: probabilityWeight
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 377239496438209804, guid: 6ea0cd9257af93343a08594e68159d65, type: 3}
+      propertyPath: dirWeights.Array.data[1]
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 377239496438209804, guid: 6ea0cd9257af93343a08594e68159d65, type: 3}
+      propertyPath: dirWeights.Array.data[3]
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4553932399779188641, guid: 6ea0cd9257af93343a08594e68159d65, type: 3}
       propertyPath: m_Name
       value: Falling Block Variant 1

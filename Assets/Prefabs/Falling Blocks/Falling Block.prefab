@@ -190,6 +190,11 @@ MonoBehaviour:
   blockType: {fileID: 5379693628975305598, guid: 73dd5f07059c0564db9ded52dd5899d4, type: 3}
   width: 1
   height: 1
+  dirWeights:
+  - 1
+  - 1
+  - 1
+  - 1
 --- !u!50 &2275638135391519760
 Rigidbody2D:
   serializedVersion: 4
