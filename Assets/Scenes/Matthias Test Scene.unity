@@ -288,6 +288,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: waves parent
       objectReference: {fileID: 0}
+    - target: {fileID: 1538235152638075579, guid: 06cf0bf993268334597db7bc159d3d5b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3604466024936331444, guid: 06cf0bf993268334597db7bc159d3d5b, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -687,6 +691,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2390097867624822046, guid: fc127c1d53316a54eae85c3be43f6554, type: 3}
       propertyPath: meteorIntervalVariation
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2390097867624822046, guid: fc127c1d53316a54eae85c3be43f6554, type: 3}
+      propertyPath: meteorElevationMultiplier
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5019421561973549841, guid: fc127c1d53316a54eae85c3be43f6554, type: 3}

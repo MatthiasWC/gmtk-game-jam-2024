@@ -6,8 +6,15 @@ using UnityEngine.Events;
 
 public class Destructible : MonoBehaviour
 {
+    [SerializeField] private GameObject ps;
+
     public delegate void CallBack();
     private List<CallBack> callBacks = new List<CallBack>();
+
+    /*private void Start()
+    {
+        ps = GetComponent<ParticleSystem>();
+    }*/
 
     public void Destruct()
     {
@@ -15,6 +22,7 @@ public class Destructible : MonoBehaviour
         {
             cb();
         }
+        Instantiate(ps, transform.position, Quaternion.identity);
         Destroy(gameObject);
     }
 
