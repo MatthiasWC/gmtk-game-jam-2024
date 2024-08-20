@@ -689,10 +689,6 @@ PrefabInstance:
     m_TransformParent: {fileID: 1751252739}
     m_Modifications:
     - target: {fileID: 239734736433505127, guid: 1dd670aaa9e064643961ffad77c14b57, type: 3}
-      propertyPath: m_text
-      value: ye height
-      objectReference: {fileID: 0}
-    - target: {fileID: 239734736433505127, guid: 1dd670aaa9e064643961ffad77c14b57, type: 3}
       propertyPath: m_margin.w
       value: -29.348227
       objectReference: {fileID: 0}
