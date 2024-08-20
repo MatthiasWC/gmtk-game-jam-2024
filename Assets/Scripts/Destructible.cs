@@ -11,8 +11,6 @@ public class Destructible : MonoBehaviour
 
     public void Destruct()
     {
-        Debug.Log("gameObject: " + this.gameObject.name);
-        Debug.Log("num callbacks: " + callBacks.Count);
         foreach (CallBack cb in callBacks)
         {
             cb();

@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class BlockController : MonoBehaviour
 {
-    public Vector2 size;
     [SerializeField] private float throwPower = 5f;
     [SerializeField] private int trajectoryLineSteps = 500;
 
@@ -14,12 +13,14 @@ public class BlockController : MonoBehaviour
     private Rigidbody2D rb;
     private LineRenderer lr;
     private Destructible db;
+    private Collider2D col;
 
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         lr = GetComponent<LineRenderer>();
         db = GetComponent<Destructible>();
+        col = GetComponent<Collider2D>();
         /*db.AddCallback(BeforeDestruct);*/
     }
 
@@ -46,11 +47,27 @@ public class BlockController : MonoBehaviour
         hasBeenThrown = true;
         Destroy(gameObject.GetComponent<FixedJoint2D>());
         lr.enabled = false;
-        if (GetComponent<Collider2D>().IsTouchingLayers(LayerMask.GetMask("Terrain")))
+        if (col.IsTouchingLayers(LayerMask.GetMask("Terrain")))
         {
-            DisablePhysics();
-            gameObject.layer = LayerMask.NameToLayer("Terrain");
-            return Vector2.zero;
+            ContactFilter2D filter = new()
+            {
+                useLayerMask = true,
+                layerMask = LayerMask.GetMask("Terrain"),
+                useTriggers = true
+            };
+            Collider2D[] touchingColliders = new Collider2D[30];
+            int numColliding = col.OverlapCollider(filter, touchingColliders);
+            for (int i = 0; i < numColliding; i++)
+            {
+                Vector2 otherColCenter = touchingColliders[i].transform.position;
+                Vector2 pathToBlock = otherColCenter - col.ClosestPoint(otherColCenter);
+                if (Vector2.Angle(pathToBlock, throwVelocity) < 90)
+                {
+                    DisablePhysics();
+                    gameObject.layer = LayerMask.NameToLayer("Terrain");
+                    return Vector2.zero;
+                }
+            }
         }
         EnablePhysics();
         rb.velocity = throwVelocity;

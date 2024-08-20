@@ -173,10 +173,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5cbedc66cb4552842bb083de854c43d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 5
-  initialJumpSpeed: 20
-  maxJumpTime: 0.5
-  earlyJumpReleaseVelocityModifier: 0.5
+  moveSpeed: 7.5
+  initialJumpSpeed: 17
+  maxJumpTime: 0.7
+  earlyJumpReleaseVelocityModifier: 0.2
   coyoteTime: 0.1
   maxFallSpeed: 10
 --- !u!114 &-7579614010906665977

@@ -7,28 +7,32 @@ public class MeteorManager : MonoBehaviour
     [SerializeField] private GameObject meteor;
     [SerializeField] private float meteorFrequency;
     [SerializeField] private float meteorIntervalVariation;
+    [SerializeField] private float meteorElevationMultiplier = 0.1f;
 
     private float ySpawnRange;
     private float xSpawnRange;
     private float meteorRadius;
     private GameBounds gameBounds;
+    private Transform player;
 
     void Start()
     {
-        StartCoroutine(SpawnMeteor());
-
         meteorRadius = meteor.GetComponent<CircleCollider2D>().radius + 1;
 
         gameBounds = GameBounds.instance;
 
+        player = PlayerSingleton.instance.gameObject.transform;
+
         ySpawnRange = gameBounds.upperLeft.y - gameBounds.lowerLeft.y - 4;
         xSpawnRange = gameBounds.upperRight.x - gameBounds.upperLeft.x;
+
+        StartCoroutine(SpawnMeteor());
     }
 
     IEnumerator SpawnMeteor()
     {
-        float waitTime = meteorFrequency + Random.Range(-meteorIntervalVariation, meteorIntervalVariation);
-        yield return new WaitForSeconds(waitTime);
+        float waitTime = meteorFrequency + Random.Range(-meteorIntervalVariation, meteorIntervalVariation) - player.position.y * meteorElevationMultiplier;
+        yield return new WaitForSeconds(waitTime > 0 ? waitTime : 0);
 
         float spawnDist = Random.Range(0, ySpawnRange * 2 + xSpawnRange);
 

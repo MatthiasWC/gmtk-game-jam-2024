@@ -17,6 +17,8 @@ public class FallingBlockController : MonoBehaviour
 #pragma warning restore
 
     private Rigidbody2D rb;
+    [System.NonSerialized] public float rotation;
+    private static float[] directions = new float[] { 0f, 90f, -90f, 180f };
 
     private void Start()
     {
@@ -24,6 +26,13 @@ public class FallingBlockController : MonoBehaviour
 
         rb = GetComponent<Rigidbody2D>();
         rb.velocity = new Vector2(0, -fallSpeed);
+
+        rotation = directions[Random.Range(0, 4)];
+        Transform child = transform.GetChild(0);
+        SpriteRenderer childSR = child.gameObject.GetComponent<SpriteRenderer>();
+        childSR.sprite = blockType.GetComponent<SpriteRenderer>().sprite;
+        child.Rotate(0, 0, rotation);
+        child.position += new Vector3(0, childSR.size.y / 2 * child.localScale.y, 0);
     }
 
     private void OnTriggerEnter2D(Collider2D otherCollider)
@@ -31,9 +40,9 @@ public class FallingBlockController : MonoBehaviour
         if (otherCollider.tag == "Player")
         {
             PlayerBlockController pbc = otherCollider.gameObject.GetComponent<PlayerBlockController>();
-            pbc.PickUpBlock(blockType, gameObject);
+            pbc.PickUpBlock(blockType, gameObject, rotation);
         }
-        else if (otherCollider.tag == "Terrain")
+        else if (otherCollider.gameObject.layer == LayerMask.NameToLayer("Terrain"))
         {
             rb.velocity = Vector2.zero;
             StartCoroutine(DestroyAfterDelay(landedLifespan));
