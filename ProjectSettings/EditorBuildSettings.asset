@@ -8,7 +8,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MainMenu.unity
     guid: 1fe1a99f08e92e94ebfc115964e7a6e1
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Mari Test Scene.unity
     guid: 89c8b31f25628344a91bf7b2f82d4a2a
+  - enabled: 1
+    path: Assets/Scenes/Game Scene.unity
+    guid: 2cda990e2423bbf4892e6590ba056729
   m_configObjects: {}

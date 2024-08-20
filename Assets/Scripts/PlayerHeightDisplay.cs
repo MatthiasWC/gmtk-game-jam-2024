@@ -13,7 +13,7 @@ public class PlayerHeightDisplay : MonoBehaviour
     private double init_height;
     
     private double height = 0;
-    private double max_height;
+    private double max_height = 0;
 
     private double ground_height;
     private BoxCollider2D ground_box;
