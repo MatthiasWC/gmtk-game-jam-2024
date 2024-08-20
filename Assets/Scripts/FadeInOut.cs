@@ -11,11 +11,14 @@ public class FadeInOut : MonoBehaviour
 
     public float fadeTime = 1f;
 
+    private float maxVolume;
+
     private AudioSource audioSource;
     // Start is called before the first frame update
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
+        maxVolume = audioSource.volume;
         if (FadeInToThisScene) StartCoroutine(FadeInCo());
     }
 
@@ -40,10 +43,10 @@ public class FadeInOut : MonoBehaviour
     {
         fadeImage.alpha = 1;
         audioSource.volume = 0;
-        while (fadeImage.alpha >= 0)
+        while (fadeImage.alpha > 0)
         {
             fadeImage.alpha = fadeImage.alpha - Time.deltaTime / fadeTime;
-            audioSource.volume = audioSource.volume + Time.deltaTime / fadeTime;
+            audioSource.volume = audioSource.volume + Time.deltaTime * maxVolume / fadeTime;
             yield return null;
         }
     }
@@ -52,10 +55,10 @@ public class FadeInOut : MonoBehaviour
     {
         fadeImage.alpha = 0;
         audioSource.volume = 1;
-        while (fadeImage.alpha <= 1)
+        while (fadeImage.alpha < 1)
         {
             fadeImage.alpha = fadeImage.alpha + Time.deltaTime / fadeTime;
-            audioSource.volume = audioSource.volume - Time.deltaTime / fadeTime;
+            audioSource.volume = audioSource.volume - Time.deltaTime * maxVolume / fadeTime;
             yield return null;
         }
         SceneManager.LoadScene(sceneName);
