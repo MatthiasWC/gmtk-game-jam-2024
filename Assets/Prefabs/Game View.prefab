@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 254065326810698494}
   - component: {fileID: 4309362862897683265}
+  - component: {fileID: 4926220229524568278}
   m_Layer: 0
   m_Name: Game View
   m_TagString: Untagged
@@ -48,6 +49,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   followForce: 5
   offset: -10
+--- !u!114 &4926220229524568278
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2765766281832892800}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2016052383392754d96f8c33f748beeb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlayerObject: {fileID: 0}
+  HeightText: {fileID: 0}
+  ground: {fileID: 0}
 --- !u!1001 &1680796521803479036
 PrefabInstance:
   m_ObjectHideFlags: 0
