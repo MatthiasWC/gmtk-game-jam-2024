@@ -74,8 +74,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278391868
-  m_fontColor: {r: 0.23529412, g: 0.078431375, b: 0.011764706, a: 1}
+    rgba: 4289647834
+  m_fontColor: {r: 0.85490197, g: 0.83137256, b: 0.68235296, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -381,9 +381,9 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_NormalColor: {r: 0.53333336, g: 0.12941177, b: 0.17254902, a: 1}
+    m_HighlightedColor: {r: 0.6784314, g: 0.1882353, b: 0.24313726, a: 1}
+    m_PressedColor: {r: 0.7529412, g: 0.46666667, b: 0.49803922, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
@@ -490,8 +490,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278391868
-  m_fontColor: {r: 0.23529412, g: 0.078431375, b: 0.011764706, a: 1}
+    rgba: 4289647834
+  m_fontColor: {r: 0.85490197, g: 0.83137256, b: 0.68235296, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -782,9 +782,9 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_NormalColor: {r: 0.53333336, g: 0.12941177, b: 0.17254902, a: 1}
+    m_HighlightedColor: {r: 0.6792453, g: 0.18903525, b: 0.24138786, a: 1}
+    m_PressedColor: {r: 0.754717, g: 0.46635816, b: 0.4971538, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
