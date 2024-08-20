@@ -122,7 +122,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4221983525997182704, guid: 226694bc95d44584c8237b50eb981a73, type: 3}
       propertyPath: m_text
-      value: won hath thee
+      value: Won Hath Thee
       objectReference: {fileID: 0}
     - target: {fileID: 4948342979448464691, guid: 226694bc95d44584c8237b50eb981a73, type: 3}
       propertyPath: m_text

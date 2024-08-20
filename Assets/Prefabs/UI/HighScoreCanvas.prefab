@@ -67,8 +67,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 0
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: afe849a5a17c7524f907a99826834f70, type: 2}
-  m_sharedMaterial: {fileID: -8247406344957482004, guid: afe849a5a17c7524f907a99826834f70, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 00d36d629647fe640b046df43a05ce3b, type: 2}
+  m_sharedMaterial: {fileID: -3287815182974574643, guid: 00d36d629647fe640b046df43a05ce3b, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -202,8 +202,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: afe849a5a17c7524f907a99826834f70, type: 2}
-  m_sharedMaterial: {fileID: -8247406344957482004, guid: afe849a5a17c7524f907a99826834f70, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 00d36d629647fe640b046df43a05ce3b, type: 2}
+  m_sharedMaterial: {fileID: -3287815182974574643, guid: 00d36d629647fe640b046df43a05ce3b, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -227,8 +227,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 70
-  m_fontSizeBase: 70
+  m_fontSize: 60
+  m_fontSizeBase: 60
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -296,6 +296,7 @@ GameObject:
   - component: {fileID: 8293334754402062161}
   - component: {fileID: 753909189250362671}
   - component: {fileID: 554395298411036662}
+  - component: {fileID: 6097627544228524640}
   m_Layer: 5
   m_Name: HighScoreCanvas
   m_TagString: Untagged
@@ -388,6 +389,19 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &6097627544228524640
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7394143376147456820}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2016052383392754d96f8c33f748beeb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HeightText: {fileID: 7947311329003252655}
 --- !u!1 &8982882933166263344
 GameObject:
   m_ObjectHideFlags: 0
@@ -455,8 +469,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: thy height
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: afe849a5a17c7524f907a99826834f70, type: 2}
-  m_sharedMaterial: {fileID: -8247406344957482004, guid: afe849a5a17c7524f907a99826834f70, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 00d36d629647fe640b046df43a05ce3b, type: 2}
+  m_sharedMaterial: {fileID: -3287815182974574643, guid: 00d36d629647fe640b046df43a05ce3b, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -480,8 +494,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 40
-  m_fontSizeBase: 40
+  m_fontSize: 35
+  m_fontSizeBase: 35
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18

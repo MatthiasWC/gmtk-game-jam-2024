@@ -22,7 +22,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5000838646899380820, guid: 2d6e44d76b522574589149efb52972e9, type: 3}
       propertyPath: m_text
-      value: died hath thee
+      value: Died Hath Thee
       objectReference: {fileID: 0}
     - target: {fileID: 5710987792726869315, guid: 2d6e44d76b522574589149efb52972e9, type: 3}
       propertyPath: m_Name
