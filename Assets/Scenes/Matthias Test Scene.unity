@@ -693,6 +693,10 @@ PrefabInstance:
       propertyPath: meteorIntervalVariation
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2390097867624822046, guid: fc127c1d53316a54eae85c3be43f6554, type: 3}
+      propertyPath: meteorElevationMultiplier
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5019421561973549841, guid: fc127c1d53316a54eae85c3be43f6554, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.21672711
