@@ -6,7 +6,7 @@ using TMPro;
 public class PlayerHeightDisplay : MonoBehaviour
 {
 
-    [SerializeField] private GameObject PlayerObject;
+    private GameObject PlayerObject;
     [SerializeField] private TMP_Text HeightText;
     [SerializeField] private GameObject ground;
 
@@ -23,6 +23,7 @@ public class PlayerHeightDisplay : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        PlayerObject = PlayerSingleton.instance.gameObject;
         //init_height = PlayerObject.transform.position.y;
 
 
