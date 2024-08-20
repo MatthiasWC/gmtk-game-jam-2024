@@ -63,7 +63,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HeightText: {fileID: 9210044051693984785}
-  ground: {fileID: 0}
 --- !u!1001 &1268365589882501054
 PrefabInstance:
   m_ObjectHideFlags: 0
