@@ -20,18 +20,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Falling Block Variant 6
       objectReference: {fileID: 0}
-    - target: {fileID: 6000770469158100796, guid: 6ea0cd9257af93343a08594e68159d65, type: 3}
-      propertyPath: m_Color.b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6000770469158100796, guid: 6ea0cd9257af93343a08594e68159d65, type: 3}
-      propertyPath: m_Color.g
-      value: 0.2990358
-      objectReference: {fileID: 0}
-    - target: {fileID: 6000770469158100796, guid: 6ea0cd9257af93343a08594e68159d65, type: 3}
-      propertyPath: m_Color.r
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7044929308860054290, guid: 6ea0cd9257af93343a08594e68159d65, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
