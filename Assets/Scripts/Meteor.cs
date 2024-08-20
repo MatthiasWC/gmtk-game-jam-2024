@@ -41,7 +41,7 @@ public class Meteor : MonoBehaviour
         if (ds != null)
         {
             ds.Destruct();
-            GetComponent<Destructible>().Destruct();
         }
+        GetComponent<Destructible>().Destruct();
     }
 }
