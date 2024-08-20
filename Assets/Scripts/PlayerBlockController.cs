@@ -8,11 +8,13 @@ public class PlayerBlockController : MonoBehaviour
     private GameObject currentBlock;
     private Rigidbody2D rb;
     private Collider2D col;
+    private Animator animator;
 
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         col = GetComponent<Collider2D>();
+        animator = GetComponent<Animator>();
     }
 
     void Update()
@@ -21,6 +23,7 @@ public class PlayerBlockController : MonoBehaviour
         {
             BlockController bc = currentBlock.GetComponent<BlockController>();
             Vector2 throwVelocity = bc.Throw();
+            animator.SetBool("HoldingBlock", false);
             currentBlock = null;
             rb.velocity += throwVelocity.normalized * -recoilForce;
             StartCoroutine(WaitThenPickUp());
@@ -53,6 +56,7 @@ public class PlayerBlockController : MonoBehaviour
     {
         if (currentBlock == null)
         {
+            animator.SetBool("HoldingBlock", true);
             float playerOffset = GetComponent<Collider2D>().bounds.extents.y;
             Vector3 offset = new Vector3(0, playerOffset, 0);
             currentBlock = Instantiate(block, transform.position + offset, Quaternion.Euler(0, 0, rotation));

@@ -288,6 +288,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: waves parent
       objectReference: {fileID: 0}
+    - target: {fileID: 1538235152638075579, guid: 06cf0bf993268334597db7bc159d3d5b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3604466024936331444, guid: 06cf0bf993268334597db7bc159d3d5b, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
