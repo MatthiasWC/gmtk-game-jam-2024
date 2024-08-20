@@ -16,14 +16,12 @@ public class PlayerMovement : MonoBehaviour
     private BoxCollider2D col;
     private float lastWasGroundedTime = 0f;
     private Animator animator;
-    private AudioSource ass;
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         col = GetComponent<BoxCollider2D>();
         animator = GetComponent<Animator>();
-        ass = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
