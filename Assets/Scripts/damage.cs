@@ -9,7 +9,6 @@ public class damage : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            Debug.Log("collided");
             DeathMenu.instance.Open();
             Time.timeScale = 0;
         }
