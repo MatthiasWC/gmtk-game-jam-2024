@@ -47,5 +47,5 @@ MonoBehaviour:
   meteor: {fileID: 37159216031744503, guid: 2b0cb57904b082f47ac5cea8418340eb, type: 3}
   meteorFrequency: 5
   meteorIntervalVariation: 3
-  meteorElevationMultiplier: 0.5
+  meteorElevationMultiplier: 1.5
   lowestMeteorHeight: 7
