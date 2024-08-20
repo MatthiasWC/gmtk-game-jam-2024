@@ -170,6 +170,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1805357240207805504, guid: 29898f57148dcde4dbdddbfa7cf69673, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -38
+      objectReference: {fileID: 0}
+    - target: {fileID: 2191682451916530146, guid: 29898f57148dcde4dbdddbfa7cf69673, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -41
+      objectReference: {fileID: 0}
     - target: {fileID: 2765766281832892800, guid: 29898f57148dcde4dbdddbfa7cf69673, type: 3}
       propertyPath: m_Name
       value: Game View

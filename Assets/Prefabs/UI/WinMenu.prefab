@@ -20,6 +20,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: WinMenu, Assembly-CSharp
       objectReference: {fileID: 0}
+    - target: {fileID: 2393973280339622833, guid: 226694bc95d44584c8237b50eb981a73, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3147426375714615164, guid: 226694bc95d44584c8237b50eb981a73, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -122,7 +126,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4221983525997182704, guid: 226694bc95d44584c8237b50eb981a73, type: 3}
       propertyPath: m_text
-      value: Won Hath Thee
+      value: "Won Hath Thee, \nNow Perish!"
       objectReference: {fileID: 0}
     - target: {fileID: 4948342979448464691, guid: 226694bc95d44584c8237b50eb981a73, type: 3}
       propertyPath: m_text
